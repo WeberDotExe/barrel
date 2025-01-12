@@ -7,7 +7,7 @@ import { parseStringify } from "../utils";
 import { cookies } from "next/headers";
 import { parse } from "path";
 import { redirect } from "next/navigation";
-import { error } from "console";
+import { error, log } from "console";
 
  const getUserByEmail = async (email : string) => {
     const {databases} = await createAdminClient();
@@ -65,7 +65,9 @@ export const verifySecret = async ({accountId,password}:{accountId:string;passwo
 };
 
 export const getCurrentUser = async () => {
-    const {account,databases} = await createSessionClient();
+
+    try {
+        const {account,databases} = await createSessionClient();
 
     const result = await account.get();
 
@@ -74,6 +76,11 @@ export const getCurrentUser = async () => {
     );
     if (user.total<=0) return null;
     return parseStringify(user.documents[0]);
+    
+    } catch (error) {
+        console.log(error);
+        
+    }
     
 };
 
