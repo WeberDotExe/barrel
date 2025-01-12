@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import { toast, useToast } from '@/hooks/use-toast'
+import { useToast } from '@/hooks/use-toast'
 import  {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 import { Button } from './ui/button';
@@ -10,7 +10,7 @@ import Thumbnail from './Thumbnail';
 import { MAX_FILE_SIZE } from '@/constants'
 import { usePathname } from 'next/navigation'
 import { uploadFile } from '@/lib/actions/file.action'
-import { set } from 'zod'
+
 
 interface Props{
   ownerId:string;

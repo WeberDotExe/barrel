@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Search from './Search'
 import FileUploader from './FileUploader'
 import { signOutUser } from '@/lib/actions/user.actions'
-import { string } from 'zod'
+
 
 const Header = ({userId,accountId}:{userId:string;accountId:string;}) => {
   return (

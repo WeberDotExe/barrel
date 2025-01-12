@@ -24,12 +24,12 @@ import { constructDownloadUrl } from '@/lib/utils';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { usePathname } from 'next/navigation';
-// import { rename } from '@/lib/actions/file.action';
-import { log } from 'console';
+
+
 import { deleteFile, renameFile, updateFileUsers } from '@/lib/actions/file.action';
 import { FileDetails,ShareInput } from './ActionsModalContent';
-// import ShareInput from './ShareInput';
-// import { rename } from 'fs';
+
+
   
 
 const ActionDropdown = ({file}:{file:Models.Document}) => {
